@@ -57,6 +57,11 @@ fi
 
 # These changes apply to this script, not the user's shell or other projects.
 export PYTHONNOUSERSITE=1
+# Each stage is a separate process. Prevent a BLAS pool per node from
+# oversubscribing the CPU for the small matrices used by this project.
+export OPENBLAS_NUM_THREADS="${DOLBAT_BLAS_THREADS:-1}"
+export OMP_NUM_THREADS="${DOLBAT_BLAS_THREADS:-1}"
+export MKL_NUM_THREADS="${DOLBAT_BLAS_THREADS:-1}"
 export ROS_LOCALHOST_ONLY="${ROS_LOCALHOST_ONLY:-1}"
 export RMW_IMPLEMENTATION="${RMW_IMPLEMENTATION:-rmw_fastrtps_cpp}"
 set +u

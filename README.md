@@ -114,10 +114,12 @@ ros2_ws/src/
 
 # 원본 전체를 ROS2 노드로 처리한 뒤 기준 결과와 비교
 ./scripts/run.sh replay_rate:=0.0 output:="$PWD/outputs/check"
+source /opt/ros/humble/setup.bash
+source ros2_ws/install/setup.bash
 /usr/bin/python3 scripts/verify_ros_run.py --output outputs/check
 ```
 
-검증기는 564개 프레임의 순서와 누락, 기존 기준 경로·조향각과의 수치 차이, LP의 원·선분 관계, 고정 좌표축, 저장한 두 영상의 전체 디코딩을 확인합니다. 플랫폼에 따른 작은 부동소수점 차이는 명시된 허용 오차로 검사하며 프레임 누락을 허용하지 않습니다.
+검증기는 같은 Ubuntu/OpenCV 환경에서 ROS 통신 없는 순수 알고리즘 기준을 먼저 만들고, ROS2 결과와 엄격 비교합니다. 564개 프레임의 순서와 누락, 경로·조향각의 수치 차이, LP의 원·선분 관계, 고정 좌표축, 저장한 두 영상의 전체 디코딩을 확인합니다. 기준은 `records/native_reference/`에 저장하며 `windows_comparison.json`에 기존 Windows 결과와의 차이도 별도로 남깁니다. OpenCV·영상 디코더 버전 차이로 관측 픽셀과 관측 구간이 달라질 수 있으므로, Windows와의 차이를 ROS 메시지 손실로 간주하거나 비교 허용 오차를 임의로 늘리지 않습니다.
 
 [GitHub Actions](https://github.com/tjsong1234/Dolbat_Toyproject/actions)는 Ubuntu 22.04 기반 `ros:humble-ros-base-jammy`에서 빌드·테스트·실제 전체 영상 실행을 수행합니다. 실행별 성공 여부와 산출물은 Actions의 로그와 `humble-…-validation` artifact를 확인하세요. 이 검증은 녹화영상 처리 검증이며 실제 차량의 폐루프 추종 성능이나 실시간 카메라의 지연 보장은 아닙니다.
 

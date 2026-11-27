@@ -53,7 +53,7 @@ class VisualizationNode(Node):
         except Exception as exc:
             self.failed=True;self.get_logger().error(str(exc))
             self.output.joinpath('failure.txt').write_text(repr(exc),encoding='utf-8')
-            if rclpy.ok():rclpy.shutdown()
+            # Leave the callback before shutting down the global executor.
 
     def render(self,index,group):
         if self.fps is None:
@@ -131,7 +131,6 @@ class VisualizationNode(Node):
             'videos':videos,'scope':'Recorded video only, no vehicle command topic or actuation.'}
         (self.output/'summary.json').write_text(json.dumps(summary,ensure_ascii=False,indent=2),encoding='utf-8')
         self.get_logger().info(f'COMPLETE {total} frames, {total/elapsed:.2f} FPS; videos fully decoded')
-        rclpy.shutdown()
 
     def write_csv(self,name,rows):
         with (self.output/'records'/name).open('w',encoding='utf-8',newline='') as f:
@@ -155,7 +154,9 @@ class VisualizationNode(Node):
 def main(args=None):
     rclpy.init(args=args);node=None
     try:
-        node=VisualizationNode();rclpy.spin(node)
+        node=VisualizationNode()
+        while rclpy.ok() and not node.finished and not node.failed:
+            rclpy.spin_once(node,timeout_sec=.1)
         if node.failed:raise RuntimeError('Visualization/recording failed')
     except KeyboardInterrupt:pass
     finally:

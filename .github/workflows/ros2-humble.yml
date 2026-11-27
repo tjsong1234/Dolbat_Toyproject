@@ -28,6 +28,9 @@ jobs:
       ROS_LOCALHOST_ONLY: '1'
       RMW_IMPLEMENTATION: rmw_fastrtps_cpp
       MPLBACKEND: Agg
+      OPENBLAS_NUM_THREADS: '1'
+      OMP_NUM_THREADS: '1'
+      MKL_NUM_THREADS: '1'
     steps:
       - name: Checkout
         uses: actions/checkout@v6
@@ -50,7 +53,10 @@ jobs:
             bash scripts/run.sh --no-install --no-build \
             "output:=$GITHUB_WORKSPACE/outputs/ci" display:=false replay_rate:=0.0 max_in_flight:=4
       - name: Check numeric regression, sequence and complete video decoding
-        run: /usr/bin/python3 scripts/verify_ros_run.py --output outputs/ci
+        run: |
+          source /opt/ros/humble/setup.bash
+          source ros2_ws/install/setup.bash
+          /usr/bin/python3 scripts/verify_ros_run.py --output outputs/ci
       - name: Upload run evidence and build logs
         if: always()
         uses: actions/upload-artifact@v6
