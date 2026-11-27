@@ -62,7 +62,7 @@ class VideoSourceNode(Node):
             raise TimeoutError('No frame progress: check downstream nodes and ROS discovery')
         # The image has two consumers. Transient-local histories in subsequent
         # links retain at least the four permitted in-flight frames at discovery.
-        if self.publisher.get_subscription_count()<2 or self.ack_sub.get_publisher_count()<1:return
+        if self.publisher.get_subscription_count()<2 or self.count_publishers('/dolbat/frame_done')<1:return
         if self.start_ns is None:self.start_ns=self.get_clock().now().nanoseconds
         if self.next_frame==self.total:
             if self.pending:return
