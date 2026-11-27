@@ -1,0 +1,39 @@
+{
+  "original_source": "프로그램/src (optimized week4 release)",
+  "original_source_sha256": {
+    "boundary_pair_planning.py": "1b825778ddf0df38a3e6caa575e84c6fcb1fd22219efc8fff5432af4bf60afaa",
+    "bspline_basis.py": "ede21cdc0deca51e564be460a01feed770f6812fbd0d066a8a1a9ba1cba4a9ab",
+    "feedback_lane_detection.py": "77c1b8b3f12aee2ae02f6e8c0a8d720e00f1a8cd90fc8e669cc61d8561bac58d",
+    "final_lane_detection.py": "e177d67aef6bcde4f06da00504d7d0bf37aeb9b2427e961a0fa0d07c119ef0e8",
+    "final_visualization.py": "8f28d1c49b289b188afb4a704ae229150b167bb9f900429426e61f8bbfd6d578",
+    "frame_pipeline.py": "8e71c7c9a59fa2ebb6d25bc183bb8befd170cf6d714faa524ed131c8a1dd0790",
+    "geometry_preprocessing.py": "04185eea7a8e39b7e200362f4b10bd27996ac2f8fc746bdf9eb563e0ca62a838",
+    "joint_bspline_planning.py": "db465d640ef757079a387b41086449298e72f7eedf0b7abf5f6fabc5cabcd293",
+    "joint_lane_model.py": "39e72fe1b7434c73d21bdee47c69233c7a2dd731bc864dea2c35ded73ad569a0",
+    "lane_detection.py": "39e6d79973f8346b8a20cfed4c17428fd056c1dfb20b5d8b8cab3094a18e6f9b",
+    "marking_suppression.py": "80d21d0d0d0850c628231d857f8b793c9d7bbe85474651bbfc59fc2cb122b254",
+    "metric_mapping.py": "4b4e096a908503ec571d03eb59de4cbb8dd461e530b99d05e31d5ee9b9d6d6b2",
+    "metric_planning.py": "f683d6684b6b179503f31fb40752e299f472556a0a78249281d342e7e5271b58",
+    "normal_width_model.py": "2889263bfdaf59b6ccc2f1f04750f85c4ddad9b7e84d1472004d7ad8d5e5b343",
+    "path_planning.py": "d85a6286b8fbd54123a7be966721c40ce3bdeccd4a82eabee2f19341f645a5e4",
+    "perception_review.py": "a3af1a6a6d4cd9bc7c8369888aceb4eb73689a0be851beb32338affe31b87e8a",
+    "preprocessing.py": "0a27cb6d259aa3eb4a883192acfcbbe88e3a32966e5ec31e48d9d7130eb8f496",
+    "pure_pursuit.py": "9df3eb430d928b2d060fa5e38f721409d638671b320f45f191cb3559d8cd844d",
+    "road_surface_preprocessing.py": "1098d9fce34f96f3ce5288ae4d6fe36b625a6d04255272b15d4c5de0e83e0022",
+    "roi_editor.py": "628f0e1051c8beb65d0bfc29931e7948da5ebc5c750b55cd6f0b5783b35b02f9",
+    "sliding_visualization.py": "d2d1cbdd37646bdfaf74f8570b21b2aeba1dc7647b4a33aff304b29137117bdd",
+    "stable_metric_planning.py": "d2f946bc56538a85aa991d845a2b6ad24709076a93995a4e1363eff039857821",
+    "supported_lane_detection.py": "1ba160719bf8d0afceb8e2bba3abeda4044622f216fd74413fc0eb7f70842386",
+    "video_output.py": "518a3d659a1aff440a3c51229d1d8ad5a7ec7dc688e7d950877ae76291a7b07c",
+    "week3_visualization.py": "d6fe569f6ce93e4ae0e8d92a7391139ef62e8e7c82f580263ae573000c9e920a",
+    "week4_control.py": "81fb1ae6e35380593836476ba4b48070eade5efb1ceb41eaef80dfbc93a8cf91",
+    "week4_geometry.py": "77124afe8f34754b9967bc037516c2f574e6495a3693d0b6fe5b6acec82862f9",
+    "week4_visualization.py": "7a63f519622156300015d7006112405c417618c75c99eac203eaba4d8b0f7812",
+    "window_chain_detection.py": "442471444237829e85096150098212fb321111406b1b573cce206ee9e1a5ced5",
+    "yellow_guided_planning.py": "4298cd991c8b1bf8313f6a12bf172098b975fb58e6b998ea26dd9b1f3522c4dd",
+    "__init__.py": "48f8221b14578718d95bb5f528bad78d7398b3752c55640dd71e99ef7826b0de"
+  },
+  "compatibility_changes": [
+    "metric_mapping: NumPy 1.x trapz / 2.x trapezoid compatibility"
+  ]
+}

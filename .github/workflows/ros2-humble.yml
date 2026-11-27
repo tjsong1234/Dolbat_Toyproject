@@ -1,0 +1,69 @@
+name: ROS2 Humble full-video validation
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: humble-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  humble:
+    runs-on: ubuntu-22.04
+    timeout-minutes: 25
+    container:
+      image: ros:humble-ros-base-jammy
+      options: --shm-size=512m
+    defaults:
+      run:
+        shell: bash
+    env:
+      DEBIAN_FRONTEND: noninteractive
+      PYTHONNOUSERSITE: '1'
+      ROS_LOCALHOST_ONLY: '1'
+      RMW_IMPLEMENTATION: rmw_fastrtps_cpp
+      MPLBACKEND: Agg
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+        with:
+          persist-credentials: false
+      - name: Install Ubuntu project dependencies
+        run: bash scripts/setup_ubuntu.sh
+      - name: Build the three ROS2 packages
+        run: |
+          source /opt/ros/humble/setup.bash
+          cd ros2_ws
+          /usr/bin/colcon build --symlink-install --packages-up-to dolbat_pipeline \
+            --event-handlers console_direct+ --cmake-args -DPython3_EXECUTABLE=/usr/bin/python3
+      - name: Unit and interface tests
+        run: bash scripts/test.sh
+      - name: Process every original frame through the ROS2 nodes
+        timeout-minutes: 8
+        run: |
+          timeout --signal=INT --kill-after=20s 420s \
+            bash scripts/run.sh --no-install --no-build \
+            "output:=$GITHUB_WORKSPACE/outputs/ci" display:=false replay_rate:=0.0 max_in_flight:=4
+      - name: Check numeric regression, sequence and complete video decoding
+        run: /usr/bin/python3 scripts/verify_ros_run.py --output outputs/ci
+      - name: Upload run evidence and build logs
+        if: always()
+        uses: actions/upload-artifact@v6
+        with:
+          name: humble-${{ github.run_number }}-validation
+          path: |
+            outputs/ci/summary.json
+            outputs/ci/failure.txt
+            outputs/ci/records/
+            outputs/ci/graphs/
+            outputs/ci/images/
+            outputs/ci/*.mp4
+            ros2_ws/log/
+          if-no-files-found: warn
+          compression-level: 0
+          retention-days: 14

@@ -1,0 +1,16 @@
+{
+  "status": "passed",
+  "scope": "ROS-independent core only; no ROS/DDS validation",
+  "platform": "Windows",
+  "python": "3.12.14",
+  "numpy": "2.5.4",
+  "opencv": "5.0.0",
+  "frames": 564,
+  "valid_control_frames": 564,
+  "source_sha256": "c99bd02d43f12dbcd093b808ef7bdc6c85d17c3b5620808213c5e2e2e14cc66f",
+  "max_path_difference_m": 0.0,
+  "max_steering_difference_deg": 0.0,
+  "path_atol_m": 1e-05,
+  "steering_atol_deg": 0.0001,
+  "elapsed_seconds": 20.79067750001559
+}

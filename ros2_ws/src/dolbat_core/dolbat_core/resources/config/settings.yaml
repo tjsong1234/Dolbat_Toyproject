@@ -1,0 +1,83 @@
+preprocessing:
+  processing_width: 640
+  bev_size:
+  - 640
+  - 480
+  source_points:
+  - - 0.2820037105751391
+    - 0.4727722772277228
+  - - 0.6753246753246753
+    - 0.4727722772277228
+  - - 0.9294990723562152
+    - 0.9158415841584158
+  - - 0.00927643784786642
+    - 0.8737623762376239
+  destination_points:
+  - - 0
+    - 0
+  - - 1
+    - 0
+  - - 1
+    - 1
+  - - 0
+    - 1
+  white_min_value: 165
+  white_max_saturation: 85
+  road_max_value: 155
+  road_max_saturation: 105
+  road_neighborhood: 19
+  min_half_thickness_px: 2.3
+  horizontal_kernel_px: 85
+  min_component_area: 70
+lane_detection:
+  windows: 12
+  margin_px: 55
+  min_pixels_window: 18
+  min_pixels_fit: 130
+  min_y_coverage: 0.3
+  min_occupied_windows: 4
+  max_residual_px: 14
+  nominal_lane_width_px: 365
+  width_range_px:
+  - 240
+  - 470
+  max_width_variation_px: 100
+  max_temporal_jump_px: 65
+  smoothing_alpha: 0.55
+  max_missed_frames: 4
+  histogram_min_peak: 4
+  peak_separation_px: 75
+  max_fit_extrapolation_px: 90
+calibration:
+  status: assumed_not_measured
+  lane_width_m: 0.85
+  lane_width_px: 365
+  forward_span_m: 2.4
+  near_distance_m: 0.35
+  vehicle_center_x_normalized: 0.5
+  evidence: 'Rules PDF p9: road width 850 mm; applicability to this video UNCONFIRMED.
+    x/y scale and camera-to-rear-axle offset are assumptions.'
+planning:
+  samples: 100
+control:
+  wheelbase_m: 0.26
+  lookahead_m: 1.0
+  wheelbase_status: assumed_not_measured
+  max_steering_deg: 35.0
+  jump_warning_deg: 8.0
+output:
+  panel_size:
+  - 480
+  - 360
+  snapshot_interval_frames: 100
+  codec: mp4v
+  opencv_threads: 2
+roi_selection:
+  video: dolbat_toyproject.mp4
+  frame_index_zero_based: 452
+  source_size:
+  - 640
+  - 480
+  corner_order: TL, TR, BR, BL
+  selected_at: '2026-11-11T04:11:01.583718+09:00'
+  metric_calibration: ROI selection does not calibrate physical distances

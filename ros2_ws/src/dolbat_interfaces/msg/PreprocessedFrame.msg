@@ -1,0 +1,9 @@
+std_msgs/Header header
+uint32 frame_index
+float64 source_fps
+bool end_of_stream
+uint32 source_width
+uint32 source_height
+sensor_msgs/Image binary
+sensor_msgs/Image paint
+sensor_msgs/Image crosswalk

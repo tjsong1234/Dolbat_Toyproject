@@ -1,0 +1,19 @@
+# Build products and per-run evidence are regenerated on Ubuntu.
+ros2_ws/build/
+ros2_ws/install/
+ros2_ws/log/
+outputs/
+validation/local_*/
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.coverage
+htmlcov/
+*.egg-info/
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
+# Keep the original recording and numeric regression fixtures tracked.

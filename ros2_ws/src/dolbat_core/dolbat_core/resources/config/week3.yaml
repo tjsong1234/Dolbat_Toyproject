@@ -1,0 +1,30 @@
+# Course-provided measurements, not values measured by this program in the room.
+reference_measurements:
+  clear_lane_width_cm: 85.0
+  paint_width_cm: 5.0
+  dash_length_cm: 50.0
+  dash_gap_cm: 50.0
+  width_interpretation: inner_edges
+  source: '20261119_돌밭자율주행_입문스터디.pdf PDF page 130 / printed Page 20'
+  status: provided_by_course
+calibration:
+  reference_frames: [0, 7, 30, 60, 80, 100]
+  validation_frames: [15, 45, 90, 110]
+  sample_v_range: [80, 590]
+  paint_width_px_range: [8, 40]
+  max_center_distance_px: 7
+  minimum_dash_rows: 35
+  maximum_dash_rows: 145
+  max_bridge_hole_rows: 3
+  source_boundary_margin_px: 12
+  origin: bev_bottom_center_reference_not_rear_axle
+planning:
+  degree: 2
+  samples: 160
+  min_path_span_cm: 20.0
+  robust_iterations: 3
+  fit_outlier_limit_cm: 4.0
+  single_boundary_method: normal_offset
+  offset_singularity_margin: 0.05
+output:
+  example_frames: [0, 7, 30, 100, 140, 162, 170, 172, 180, 250, 280, 302, 318, 335, 342, 349, 350, 351, 354, 358, 430, 500, 516, 520, 535, 539, 541, 547, 555, 563]

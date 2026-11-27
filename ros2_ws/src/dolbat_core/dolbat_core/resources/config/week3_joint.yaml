@@ -1,0 +1,114 @@
+geometry_translation_u_px: 80.0
+reference_measurements:
+  clear_lane_width_cm: 85.0
+  paint_width_cm: 5.0
+  dash_length_cm: 50.0
+  dash_gap_cm: 50.0
+  width_interpretation: inner_edges
+  source: 20261119_돌밭자율주행_입문스터디.pdf PDF page 130 / printed Page 20
+  status: provided_by_course
+calibration:
+  reference_frames:
+  - 0
+  - 7
+  - 30
+  - 60
+  - 80
+  - 100
+  validation_frames:
+  - 15
+  - 45
+  - 90
+  - 110
+  sample_v_range:
+  - 80
+  - 590
+  paint_width_px_range:
+  - 8
+  - 40
+  max_center_distance_px: 7
+  minimum_dash_rows: 35
+  maximum_dash_rows: 145
+  max_bridge_hole_rows: 3
+  source_boundary_margin_px: 12
+  origin: bev_bottom_center_reference_not_rear_axle
+planning:
+  boundary_completion: joint_bspline
+  blue_width_prior_support_cm: 30.0
+  blue_width_max_adjustment_cm: 12.0
+  blue_width_min_support_cm: 8.0
+  blue_width_max_scatter_cm: 8.0
+  blue_width_allow_affine: true
+  blue_width_affine_prior_support_cm: 30.0
+  blue_width_affine_max_gradient: 0.1
+  blue_use_partial: true
+  blue_partial_weight: 0.25
+  blue_partial_max_support_cm: 30.0
+  blue_partial_max_adjustment_cm: 1.5
+  blue_partial_max_scatter_cm: 3.0
+  blue_width_good_relative_error: 0.1
+  blue_width_max_relative_error: 0.3
+  blue_angle_good_rad: 0.15
+  blue_angle_max_rad: 0.45
+  degree: 2
+  samples: 160
+  min_path_span_cm: 20.0
+  robust_iterations: 3
+  fit_outlier_limit_cm: 4.0
+  single_boundary_method: normal_offset
+  offset_singularity_margin: 0.05
+  path_smoothing_time_constant_s: 0.075
+  max_path_adjustment_cm: 1.0
+  path_pair_range_reset_cm: 20.0
+  path_blend_edge_cm: 100.0
+  path_min_shared_span_cm: 20.0
+  joint_control_points: 7
+  joint_iterations: 7
+  joint_width_prior: 0.15
+  joint_width_slope_prior: 3.0
+  joint_curvature_regularization: 0.002
+  joint_jerk_regularization: 0.0002
+  joint_partial_weight: 0.2
+  joint_max_model_curvature_per_cm: 0.02
+output:
+  example_frames:
+  - 7
+  - 100
+  - 140
+  - 162
+  - 170
+  - 205
+  - 228
+  - 256
+  - 280
+  - 284
+  - 285
+  - 300
+  - 310
+  - 318
+  - 342
+  - 349
+  - 351
+  - 358
+  - 430
+  - 441
+  - 488
+  - 490
+  - 516
+  - 539
+  - 547
+  - 555
+  - 563
+  - 494
+  - 500
+  - 507
+  - 525
+  - 544
+  - 554
+lane_context: {}
+visualization:
+  metric_axes:
+    x_min: -20.0
+    x_max: 380.0
+    y_limit: 200.0
+    tick_cm: 50.0

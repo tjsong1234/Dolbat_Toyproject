@@ -1,0 +1,13 @@
+std_msgs/Header header
+uint32 frame_index
+float64 source_fps
+bool end_of_stream
+string status
+string reason
+float64 confidence
+dolbat_interfaces/LaneCurve left
+dolbat_interfaces/LaneCurve right
+dolbat_interfaces/LaneCurve partial_left
+dolbat_interfaces/LaneCurve partial_right
+string partial_summary_json
+string context_rejections_json

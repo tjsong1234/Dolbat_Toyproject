@@ -1,0 +1,11 @@
+{
+  "source_video_sha256": "c99bd02d43f12dbcd093b808ef7bdc6c85d17c3b5620808213c5e2e2e14cc66f",
+  "source_run": "Windows CPU, week4_pure_pursuit_20261127_optimized_release",
+  "frames": 564,
+  "fps": 24,
+  "scope": "Regression reference, not independent ground-truth lane labels. Rear-frame metre paths and Pure Pursuit outputs.",
+  "reference_sha256": {
+    "reference_control.csv": "c92cfb9193ef5011ea9857346aa37d872887164ccdea31edc572f7fb68913ffb",
+    "reference_paths.npz": "ea64e1c1888735abbe9f5fcdebd9bc817564898dad810d774916925868ebf720"
+  }
+}

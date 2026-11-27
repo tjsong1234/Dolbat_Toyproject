@@ -1,0 +1,11 @@
+# Course PDF 20261126, PDF pp126-127 / printed pp19-20.
+rear_to_image_bottom_m: 0.9
+lookahead_m: 1.7
+wheelbase_m: 0.55
+planning_profile: week3_joint.yaml
+visualization:
+  x_min_m: -0.2
+  x_max_m: 4.8
+  y_limit_m: 2.5
+  tick_m: 0.5
+example_frames: [0, 100, 280, 300, 350, 354, 430, 525, 544, 547, 554]

@@ -1,0 +1,96 @@
+{
+  "lateral_cm_per_px": 0.25449101796407186,
+  "forward_cm_per_px": 0.47076158562377646,
+  "origin_u_px": 319.5,
+  "origin_v_px": 639,
+  "status": "course_reference_video_estimate",
+  "reference_measurements": {
+    "clear_lane_width_cm": 85.0,
+    "paint_width_cm": 5.0,
+    "dash_length_cm": 50.0,
+    "dash_gap_cm": 50.0,
+    "width_interpretation": "inner_edges",
+    "source": "20261119_돌밭자율주행_입문스터디.pdf PDF page 130 / printed Page 20",
+    "status": "provided_by_course"
+  },
+  "centerline_lane_width_cm": 90.0,
+  "centerline_width_provenance": "85 cm clear inner-edge gap + two 2.5 cm half-strokes = 90 cm",
+  "reference_frames": [
+    0,
+    7,
+    30,
+    60,
+    80,
+    100
+  ],
+  "validation_frames": [
+    15,
+    45,
+    90,
+    110
+  ],
+  "x_per_frame_cm_per_px": [
+    0.25835866261398177,
+    0.25449101796407186,
+    0.25757575757575757,
+    0.25449101796407186,
+    0.25449101796407186,
+    0.2537313432835821
+  ],
+  "y_per_frame_cm_per_px": [
+    0.4892569616957167,
+    0.4715389179361237,
+    0.47585530354432154,
+    0.45473343372393077,
+    0.45857909663047935,
+    0.4699842533114293
+  ],
+  "x_summary": {
+    "count": 6,
+    "retained": 6,
+    "median": 0.25449101796407186,
+    "mad": 0.0003798373402448818,
+    "minimum": 0.2537313432835821,
+    "maximum": 0.25835866261398177
+  },
+  "y_summary": {
+    "count": 6,
+    "retained": 6,
+    "median": 0.47076158562377646,
+    "mad": 0.008638103456921092,
+    "minimum": 0.45473343372393077,
+    "maximum": 0.4892569616957167
+  },
+  "x_rows": 1404,
+  "y_intervals": 24,
+  "validation": {
+    "clear_width": {
+      "samples": 922,
+      "median_cm": 84.49101796407186,
+      "median_abs_error_cm": 0.7634730538922128
+    },
+    "dash": {
+      "samples": 8,
+      "median_cm": 50.177372324825186,
+      "median_abs_error_cm": 0.9590152790811857,
+      "min_cm": 48.48951705806152,
+      "max_cm": 51.3216243652189
+    },
+    "gap": {
+      "samples": 4,
+      "median_cm": 50.17452529967658,
+      "median_abs_error_cm": 0.6459829112795745,
+      "min_cm": 48.49717065085013,
+      "max_cm": 50.84659655257042
+    },
+    "pitch": {
+      "samples": 4,
+      "median_cm": 100.34924939749331,
+      "median_abs_error_cm": 1.409672712115139,
+      "min_cm": 97.23516232382417,
+      "max_cm": 102.16435076793852
+    }
+  },
+  "geometry_config_sha256": "b311a56462b05a8dd31c35c3481f00cb277eb993c42626557cbad6b91593eb8d",
+  "origin_note": "BEV bottom-center reference only. Camera-to-rear-axle offset and heading are NOT measured."
+}

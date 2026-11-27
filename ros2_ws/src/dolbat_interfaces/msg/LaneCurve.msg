@@ -1,0 +1,9 @@
+bool valid
+float64[3] coefficients
+float64[] pixels_uv
+float64 residual_px
+float64 coverage
+float64 y_min
+float64 y_max
+bool inferred
+string support_json

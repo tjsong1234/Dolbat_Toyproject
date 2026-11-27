@@ -1,0 +1,12 @@
+# Feedback correction for the SAME saved ROI. Pixel units, not metric calibration.
+marking_overrides:
+  mode: thickness_local
+  horizontal_max_vertical_thickness_px: 28
+lane_overrides:
+  nominal_lane_width_px: 500.0
+  width_range_px: [360.0, 625.0]
+  max_width_variation_px: 140.0
+  margin_px: 55
+retry_margin_px: 115
+comparison_margins_px: [55, 75, 95, 115]
+example_frames: [0, 30, 100, 140, 180, 205, 220, 250, 265, 280, 290, 302, 318, 335, 430, 452, 480, 500, 520, 535, 540, 550, 555, 560, 563]
